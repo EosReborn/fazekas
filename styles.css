@@ -772,3 +772,18 @@ h3 { font-size: 1.3rem; margin-bottom:10px; }
   .roof-grid { gap: 10px; }
   .roof-item { padding: 10px 16px; font-size: .9rem; }
 }
+
+/* ===== CLEANUP: vélemény helyszín ===== */
+.review-location {
+  color: var(--text-muted) !important;
+  font-size: .8rem !important;
+  font-weight: 400 !important;
+}
+
+/* BSH card without icon — add subtle number accent instead */
+.bsh-card {
+  counter-increment: bsh-counter;
+}
+.bsh-card::before {
+  content: none; /* remove any pseudo elements */
+}
