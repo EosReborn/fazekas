@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fazekas Faépítmények | Prémium Faszerkezetes Fedések</title>
   <meta name="description" content="Kézzel fogható minőség a felméréstől a kivitelezésig. Egyedi pergolák, teraszfedések és kocsibeállók Győr környékén.">
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="./icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <meta name="theme-color" content="#c2410c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -33,7 +37,7 @@
   <nav class="navbar" id="navbar" aria-label="Főnavigáció">
     <div class="container nav-container">
       <a href="#" class="brand" aria-label="Fazekas Faépítmények főoldal">
-        <img src="./logo.jpg"
+        <img src="./logo.jpeg"
           alt="Fazekas Faépítmények Logó" class="brand-logo" width="44" height="44">
         <span class="brand-name">Fazekas Faépítmények</span>
       </a>
@@ -61,6 +65,7 @@
   <header class="hero">
     <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&auto=format&fit=crop&q=80');"></div>
     <div class="hero-overlay"></div>
+    <div class="wood-grain-overlay" aria-hidden="true"></div>
     <div class="hero-container fade-in">
       <div class="hero-content">
         <span class="eyebrow eyebrow-light">Győr és környéke</span>
@@ -80,6 +85,17 @@
   </header>
 
   <main>
+  <!-- Fa díszítő elválasztó -->
+  <div class="wood-divider" aria-hidden="true">
+    <svg class="wood-divider-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" stroke="#c2410c" stroke-width="0.8" opacity="0.4"/>
+      <circle cx="18" cy="18" r="12" stroke="#c2410c" stroke-width="0.8" opacity="0.3"/>
+      <circle cx="18" cy="18" r="7"  stroke="#c2410c" stroke-width="0.8" opacity="0.2"/>
+      <circle cx="18" cy="18" r="2"  fill="#c2410c" opacity="0.3"/>
+    </svg>
+  </div>
+
+
     <!-- Rólunk -->
     <section id="rolunk" class="section">
       <div class="container intro-grid">
@@ -426,7 +442,7 @@
   <footer class="footer dark-theme">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="./logo.jpg" alt="Fazekas Faépítmények logó" class="footer-logo"><span class="footer-brand-name">Fazekas Faépítmények</span>
+        <img src="./logo.jpeg" alt="Fazekas Faépítmények logó" class="footer-logo"><span class="footer-brand-name">Fazekas Faépítmények</span>
         <p>Prémium faszerkezetes fedések Győr környékén.</p>
       </div>
 
@@ -472,6 +488,14 @@
       </div>
     </div>
   </div>
+
+
+  <!-- Lebegő hívás gomb (csak mobilon) -->
+  <a href="tel:06302788662" class="float-call" aria-label="Hívás: 06 30 278 8662">
+    <svg viewBox="0 0 24 24" width="26" height="26" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+    </svg>
+  </a>
 
   <script src="./script.js"></script>
 </body>
