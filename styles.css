@@ -489,3 +489,23 @@ h3 { font-size: 1.3rem; margin-bottom:10px; }
   .fade-in { transition:none; opacity:1; transform:none; }
   .gallery-item, .gallery-image, .gallery-overlay, .gallery-item-title { transition:none; }
 }
+
+/* ===== LOGO UPDATES ===== */
+/* Round logo fits better as a circle */
+.brand-logo {
+  border-radius: 50% !important;
+  object-fit: cover;
+  background: white;
+}
+
+/* Footer logo */
+.footer-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-inline: auto;
+  margin-bottom: 10px;
+  background: white;
+  display: block;
+}
