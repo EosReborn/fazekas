@@ -94,6 +94,17 @@ document.addEventListener("DOMContentLoaded", () => {
   cookieDecline?.addEventListener("click", () => { setCookie(COOKIE_KEY,"declined", 30); cookieBanner.classList.remove("is-visible"); });
   cookieSettings?.addEventListener("click",() => cookieBanner?.classList.add("is-visible"));
 
+  // ── GYIK: egyszerre csak egy válasz legyen nyitva ──────────
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach((item) => {
+    item.addEventListener("toggle", () => {
+      if (!item.open) return;
+      faqItems.forEach((other) => {
+        if (other !== item && other.open) other.open = false;
+      });
+    });
+  });
+
   // ── NAVBAR / HAMBURGER ───────────────────────────────────────
   const navbar     = document.getElementById("navbar");
   const navToggle  = document.getElementById("navToggle");
