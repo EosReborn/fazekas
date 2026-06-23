@@ -131,3 +131,14 @@
 .gallery-item-open{display:block;margin-top:14px;color:#fff;font-size:.68rem;font-weight:800;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
 .gallery-item-open span{color:var(--lime);font-size:1rem;margin-left:3px}.gallery-item:hover .gallery-item-open{opacity:1;transform:none}
 @media(max-width:768px){.gallery-masonry{grid-auto-rows:175px;gap:8px}.gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-overlay{padding:15px;transform:none}.gallery-item-meta{font-size:.56rem;margin-bottom:5px}.gallery-item-title{font-size:.88rem}.gallery-item-open{display:none}}
+
+/* Clearer three-step project journey */
+.process-grid{position:relative;grid-template-columns:repeat(3,1fr);gap:clamp(26px,5vw,80px);border:0}
+.process-grid:before{content:'';position:absolute;z-index:0;left:25px;right:25px;top:25px;height:1px;background:linear-gradient(90deg,var(--ember),rgba(38,63,49,.22) 18%,rgba(38,63,49,.22) 82%,var(--leaf))}
+.process-step,.process-step+.process-step{position:relative;z-index:1;min-height:0;padding:0;border:0;background:transparent}
+.process-number{display:grid;place-items:center;width:52px;height:52px;border:1px solid rgba(38,63,49,.24);border-radius:50%;background:var(--paper);color:var(--leaf);font:500 .76rem/1 'DM Mono',monospace;letter-spacing:.02em;box-shadow:0 0 0 8px var(--paper)}
+.process-step:first-child .process-number{border-color:var(--ember);color:var(--ember)}
+.process-step:last-child .process-number{background:var(--leaf);border-color:var(--leaf);color:var(--lime)}
+.process-step h3{margin-top:34px;font-size:clamp(1.25rem,1.7vw,1.55rem)}
+.process-step p{max-width:34ch;margin-top:13px}
+@media(max-width:768px){.process-grid{grid-template-columns:1fr;gap:0;padding-left:31px}.process-grid:before{left:25px;right:auto;top:25px;bottom:25px;width:1px;height:auto;background:linear-gradient(var(--ember),rgba(38,63,49,.22) 22%,rgba(38,63,49,.22) 78%,var(--leaf))}.process-step,.process-step+.process-step{padding:0 0 38px}.process-step:last-child{padding-bottom:0}.process-number{margin-left:-31px}.process-step h3{margin-top:20px}.process-step p{font-size:.88rem}}
