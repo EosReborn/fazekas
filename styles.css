@@ -923,3 +923,33 @@ h3 { font-size: 1.3rem; margin-bottom:10px; }
   .lightbox-prev { left: 8px; }
   .lightbox-next { right: 8px; }
 }
+
+/* ===== BSH GRID — 6 kártyás elrendezés ===== */
+.bsh-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Szám helyett régi emoji ikon */
+.bsh-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  opacity: .25;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Kiemelt kártya (BSH) */
+.bsh-card--highlight {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%) !important;
+  border-left-color: #d97706 !important;
+}
+.bsh-card--highlight .bsh-num { color: #d97706; opacity: .35; }
+
+@media (max-width: 900px) {
+  .bsh-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .bsh-grid { grid-template-columns: 1fr !important; }
+}
