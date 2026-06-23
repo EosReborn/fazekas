@@ -71,7 +71,7 @@ const KEPEK = [
    INNEN NEM KELL MÓDOSÍTANI SEMMIT
    ============================================================ */
 
-const OLDAL_MERET = 15; // hány kép látszik egyszerre "Több kép" előtt
+const OLDAL_MERET = 6; // válogatott munkák, további képek kérésre
 
 document.addEventListener("DOMContentLoaded", () => {
 
