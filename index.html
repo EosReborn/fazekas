@@ -4,21 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fazekas Faépítmények | Prémium Faszerkezetes Fedések</title>
+  <title>Fazekas Teraszfedések | Pergolák, teraszfedések és kocsibeállók Győr környékén</title>
   <meta name="description" content="Kézzel fogható minőség a felméréstől a kivitelezésig. Egyedi pergolák, teraszfedések és kocsibeállók Győr környékén.">
   <!-- ===== SEO: Alapvető meta tagek ===== -->
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
   <meta name="author" content="Fazekas Faépítmények">
-  <meta name="keywords" content="faszerkezetes fedés, pergola, teraszfedés, kocsibeálló, kerti építmény, faépítmény, Győr, Győr környéke, faszerkezet, kültéri fedés, egyedi pergola, fa terasz">
-  <link rel="canonical" href="https://fazekas.vercel.app/">
+  <meta name="keywords" content="faszerkezetes fedés, pergola, teraszfedés, kocsibeálló, kerti építmény, faépítmény, Győr, Győr környéke, faszerkezet, kültéri fedés, egyedi pergola, fa terasz, rétegragasztott fa, BSH, előtető, polikarbonát fedés">
+  <link rel="canonical" href="https://fazekasterasz.hu/">
+
+  <!-- ===== SEO: Helyi (geo) meta tagek ===== -->
+  <meta name="geo.region" content="HU-GS">
+  <meta name="geo.placename" content="Győr">
+  <meta name="geo.position" content="47.6875;17.6504">
+  <meta name="ICBM" content="47.6875, 17.6504">
+
+  <!-- ===== Teljesítmény: hero kép előtöltése (LCP) ===== -->
+  <link rel="preload" as="image" href="./492412545_1344342180619747_7426113484604253320_n.webp" fetchpriority="high">
 
   <!-- ===== SEO: Open Graph (Facebook, Messenger, Viber megosztás) ===== -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://fazekas.vercel.app/">
+  <meta property="og:url" content="https://fazekasterasz.hu/">
   <meta property="og:title" content="Fazekas Faépítmények | Pergolák, Teraszfedések – Győr">
   <meta property="og:description" content="Rétegragasztott faanyagból (BSH) készült pergolák, teraszfedések, kocsibeállók Győrben. Nem reped, nem vetemedik – generációknak épül. Ingyenes felmérés: 06 30 278 8662">
-  <meta property="og:image" content="https://fazekas.vercel.app/og-image.jpg">
+  <meta property="og:image" content="https://fazekasterasz.hu/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -30,7 +39,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fazekas Faépítmények | Pergolák, Teraszfedések – Győr">
   <meta name="twitter:description" content="Egyedi faszerkezetes fedések Győr környékén. Ingyenes felmérés, megbízható kivitelezés.">
-  <meta name="twitter:image" content="https://fazekas.vercel.app/og-image.jpg">
+  <meta name="twitter:image" content="https://fazekasterasz.hu/og-image.jpg">
 
   <!-- ===== SEO: Strukturált adat (Google Local Business) ===== -->
   <script type="application/ld+json">
@@ -39,11 +48,11 @@
     "@type": "LocalBusiness",
     "name": "Fazekas Faépítmények",
     "description": "Egyedi faszerkezetes fedések, pergolák, teraszfedések és kocsibeállók kivitelezése Győr és környékén.",
-    "url": "https://fazekas.vercel.app",
+    "url": "https://fazekasterasz.hu",
     "telephone": "+36302788662",
-    "email": "fazekasterasz@gmail.com",
-    "image": "https://fazekas.vercel.app/og-image.jpg",
-    "logo": "https://fazekas.vercel.app/logo.jpeg",
+    "email": "fazekasfaepitmenyek@gmail.com",
+    "image": "https://fazekasterasz.hu/og-image.jpg",
+    "logo": "https://fazekasterasz.hu/logo.webp",
     "priceRange": "$$",
     "currenciesAccepted": "HUF",
     "paymentAccepted": "Cash, Bank Transfer",
@@ -87,8 +96,12 @@
       "itemListElement": [
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pergola építés"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Teraszfedés"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kocsibeálló építés"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kerti faépítmény"}}
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Előtető építés"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kocsibeálló és garázs építés"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kerti kiülő és pavilon"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kerti tároló és szerszámtároló"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Könnyűszerkezetes faház és mobilház"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Polikarbonát fedés csere és javítás"}}
       ]
     },
     "aggregateRating": {
@@ -97,15 +110,50 @@
       "reviewCount": "120",
       "bestRating": "5"
     },
+    "review": [
+      {"@type": "Review", "author": {"@type": "Person", "name": "Géza N."}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Keményen és precízen dolgoztak, nagyon jó gépjárműbeállót építettek. Ajánlani tudom azoknak, akik építtetni akarnak."},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Perjámosi-Szabó Krisztina"}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Köszönjük a profi munkátokat! Imádjuk! Csak ajánlani tudom mindenkinek!"},
+      {"@type": "Review", "author": {"@type": "Person", "name": "Attila P."}, "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"}, "reviewBody": "Precízek, pontosak és korrektek. A munkájuk hibátlan, mindent megoldottak amit kértem."}
+    ],
     "sameAs": [
       "https://www.facebook.com/share/1PGg3HUe4G/"
     ]
   }
   </script>
 
+  <!-- ===== SEO: WebSite strukturált adat ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Fazekas Teraszfedések",
+    "url": "https://fazekasterasz.hu/",
+    "inLanguage": "hu-HU",
+    "publisher": { "@type": "Organization", "name": "Fazekas Faépítmények" }
+  }
+  </script>
+
+  <!-- ===== SEO: GYIK (FAQPage) strukturált adat ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Mennyibe kerül egy teraszfedés vagy pergola?", "acceptedAnswer": {"@type": "Answer", "text": "Minden munka egyedi, ezért a pontos árat helyszíni felmérés után, személyre szabott ajánlatban adjuk meg. A felmérés Győr és vonzáskörzetében ingyenes, és nem köteleződsz el vele semmire."}},
+      {"@type": "Question", "name": "Kell előleget fizetni?", "acceptedAnswer": {"@type": "Answer", "text": "Nem. Nulla előleggel dolgozunk — a fizetés a munka elkészültével történik, az elkészült munkát fizeted ki."}},
+      {"@type": "Question", "name": "Milyen területen vállaltok munkát?", "acceptedAnswer": {"@type": "Answer", "text": "Győr és kb. 50 km-es körzetében dolgozunk, többek között Győrújbarát, Tét, Pannonhalma, Mosonmagyaróvár, Csorna és a környező falvak területén."}},
+      {"@type": "Question", "name": "Miért rétegragasztott fát (BSH) használtok?", "acceptedAnswer": {"@type": "Answer", "text": "Mert a rétegragasztott fa nem vetemedik és nem reped meg az évek alatt, mint a hagyományos szerkezeti fa. Stabil, méretpontos és esztétikus — értékálló befektetés, amely generációkon át szépen tartja magát."}},
+      {"@type": "Question", "name": "Milyen tetőfedés közül választhatok?", "acceptedAnswer": {"@type": "Answer", "text": "Több megoldás közül választhatsz: polikarbonát (akár hőtükrös opál vagy Exolon IQ Relax okos lemez), zsindely, cserép vagy lemezfedés."}},
+      {"@type": "Question", "name": "Ingyenes a helyszíni felmérés?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Győr és vonzáskörzetében díjmentesen kimegyünk, felmérjük a helyszínt, és személyre szabott árajánlatot adunk — kötöttségek nélkül."}}
+    ]
+  }
+  </script>
+
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="./icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="manifest" href="./site.webmanifest">
   <meta name="theme-color" content="#c2410c">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,7 +169,7 @@
       <div class="cookie-icon" aria-hidden="true">🍪</div>
       <div class="cookie-text">
         <strong>Sütiket használunk</strong>
-        <p>Weboldalunk sütiket (cookie) használ a jobb felhasználói élmény érdekében. Az oldal használatával elfogadod a sütik alkalmazását.</p>
+        <p>Weboldalunk csak a működéshez szükséges sütit használ (a süti-döntésed tárolása). Nem alkalmazunk analitikai vagy hirdetési sütit. Részletek az <a href="adatvedelem.html#sutik">Adatvédelmi tájékoztatóban</a>.</p>
       </div>
       <div class="cookie-actions">
         <button class="btn btn-sm btn-outline-dark" id="cookieDecline">Elutasítom</button>
@@ -133,10 +181,10 @@
   <!-- Navigáció -->
   <nav class="navbar" id="navbar" aria-label="Főnavigáció">
     <div class="container nav-container">
-      <a href="#" class="brand" aria-label="Fazekas Faépítmények főoldal">
-        <img src="./logo.jpeg"
+      <a href="#" class="brand" aria-label="Fazekas Teraszfedések főoldal">
+        <img src="./logo.webp"
           alt="Fazekas Faépítmények Logó" class="brand-logo" width="44" height="44">
-        <span class="brand-name">Fazekas Faépítmények</span>
+        <span class="brand-name">Fazekas <em>Teraszfedések</em></span>
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="navLinks">
@@ -160,22 +208,25 @@
 
   <!-- Hero -->
   <header class="hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&auto=format&fit=crop&q=80');"></div>
+    <div class="hero-bg" style="background-image: url('./492412545_1344342180619747_7426113484604253320_n.webp');"></div>
     <div class="hero-overlay"></div>
     <div class="wood-grain-overlay" aria-hidden="true"></div>
     <div class="hero-container fade-in">
       <div class="hero-content">
-        <span class="eyebrow eyebrow-light">Győr és környéke</span>
-        <h1>Faszerkezetes fedések építése természetes szépséggel és tartós kivitelezéssel.</h1>
-        <p class="lead lead-light">Egy családi vállalkozásként faszerkezetes fedések, pergolák, teraszfedések és egyedi kültéri megoldások kivitelezésével foglalkozunk.</p>
+        <h1>Teraszfedések, pergolák és kocsibeállók — egyedileg, Győr környékén.</h1>
+        <p class="lead lead-light">Olyan kültéri tereket építünk, amelyekre jó ránézni és még jobb hazatérni.</p>
         <div class="hero-actions">
           <a href="#kapcsolat" class="btn btn-primary">
-            Kérj időpontot felmérésre
+            Ingyenes felmérést kérek
           </a>
-          <a href="#galeria" class="btn btn-outline-light">Munkáink megtekintése</a>
+          <a href="#galeria" class="hero-gallery-link">Munkáink megtekintése <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="hero-footnote">Családi vállalkozás · személyes felmérés · fizetés a munka végén</p>
       </div>
     </div>
+    <a href="#rolunk" class="hero-scroll" aria-label="Görgess lejjebb">
+      <span class="hero-scroll-mouse"><span class="hero-scroll-dot"></span></span>
+    </a>
   </header>
 
   <main>
@@ -204,6 +255,18 @@
       </div>
     </section>
 
+    <section class="project-statement" aria-label="Kiemelt munkánk">
+      <div class="project-statement-media">
+        <img src="./725599144_1725310232522938_6009266775387714240_n.webp" alt="Egyedi fa teraszfedés részlete">
+        <img src="./493185568_1347669276953704_402446277136218167_n.webp" alt="Kész pergola és terasz">
+      </div>
+      <div class="project-statement-copy">
+        <p class="statement-index">01 — VALÓDI MUNKÁK</p>
+        <h2>Nem katalógusból dolgozunk. A helyszínhez, az otthonhoz és hozzád tervezünk.</h2>
+        <a href="#galeria" class="text-link">Nézd meg a projektjeinket <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <!-- Szolgáltatások -->
     <section id="szolgaltatasok" class="section bg-alt">
       <div class="container">
@@ -217,28 +280,109 @@
               <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11m-8-11v11"></path></svg>
             </div>
             <h3>Pergolák és árnyékolók</h3>
-            <p>Elegáns, árnyékot adó szerkezetek teraszokhoz, pihenőrészekhez és igényes udvari terekhez. Kiemelkedő minőségű faanyagból, méretre szabva.</p>
+            <p>Elegáns, árnyékot adó szerkezetek teraszokhoz, pihenőrészekhez és igényes udvari terekhez — méretre szabva.</p>
+          </div>
+          <div class="bento-card fade-in" style="transition-delay:0.05s">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 12l9-8 9 8M5 10v10h14V10"></path></svg>
+            </div>
+            <h3>Teraszfedések</h3>
+            <p>Praktikus és időtálló fedések, amelyek minden évszakban kényelmesebbé teszik a kültéri életteret.</p>
           </div>
           <div class="bento-card fade-in" style="transition-delay:0.1s">
             <div class="bento-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11m16-11v11m-8-11v11"></path></svg>
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 8h18l-2.5 5H5.5z"></path><path d="M5 13v7M19 13v7M3 8l1-3h16l1 3"></path></svg>
             </div>
-            <h3>Teraszfedések</h3>
-            <p>Praktikus és időtálló fedések, amelyek kényelmesebbé és használhatóbbá teszik a kültéri életteret minden évszakban.</p>
+            <h3>Előtetők</h3>
+            <p>Bejárati és ajtó feletti előtetők, amelyek megóvják a nyílászárókat az időjárástól és rendezett megjelenést adnak.</p>
           </div>
-          <div class="bento-card fade-in" style="transition-delay:0.2s">
+          <div class="bento-card fade-in" style="transition-delay:0.15s">
             <div class="bento-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="11" width="18" height="10" rx="2"></rect><path d="M7 15h0M17 15h0M4 11V7l3-3h10l3 3v4"></path></svg>
             </div>
-            <h3>Kocsibeállók</h3>
-            <p>Masszív, jól átgondolt szerkezetek, amelyek védelmet adnak és rendezett összképet teremtenek az udvaron.</p>
+            <h3>Kocsibeállók & garázs</h3>
+            <p>Masszív, jól átgondolt szerkezetek, amelyek védelmet adnak az autónak és rendezett összképet teremtenek.</p>
           </div>
-          <div class="bento-card fade-in" style="transition-delay:0.3s">
+          <div class="bento-card fade-in">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 21V11l8-6 8 6v10M4 11h16M9 21v-6h6v6"></path></svg>
+            </div>
+            <h3>Kerti kiülők & pavilonok</h3>
+            <p>Hangulatos, fedett pihenőhelyek a kertbe — egyedi tervezésű kiülők, pavilonok és nyári konyhák.</p>
+          </div>
+          <div class="bento-card fade-in" style="transition-delay:0.05s">
             <div class="bento-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
             </div>
-            <h3>Kerti tároló & Garázs</h3>
-            <p>Egyedi méretű kerti tárolók, garázs és nyári konyha — a helyszínhez és igényeidhez igazítva.</p>
+            <h3>Kerti & szerszámtárolók</h3>
+            <p>Egyedi méretű kerti tárolók és szerszámtárolók — praktikus rend a kertben, a helyszínhez igazítva.</p>
+          </div>
+          <div class="bento-card fade-in" style="transition-delay:0.1s">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"></path></svg>
+            </div>
+            <h3>Faházak & mobilházak</h3>
+            <p>Könnyűszerkezetes faházak és mobilházak építése — tartós, igényes megoldás kiegészítő vagy önálló otthonnak.</p>
+          </div>
+          <div class="bento-card fade-in" style="transition-delay:0.15s">
+            <div class="bento-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 6h18M3 12h18M3 18h18M8 3v18M16 3v18"></path></svg>
+            </div>
+            <h3>Polikarbonát csere & javítás</h3>
+            <p>Régi, elhasználódott polikarbonát fedés cseréje és javítása meglévő fém vagy fa szerkezetre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anyag kiemelés: Rétegragasztott fa (BSH) -->
+    <section class="material-spotlight" aria-label="Rétegragasztott faanyag">
+      <div class="material-media">
+        <img src="./493266858_1346032120450753_7294405559515300015_n.webp"
+             alt="Rétegragasztott fa szerkezet közelről" loading="lazy" decoding="async">
+      </div>
+      <div class="material-copy">
+        <span class="statement-index">02 — AMIBŐL ÉPÍTKEZÜNK</span>
+        <h2>Rétegragasztott fa (BSH) — generációknak épül.</h2>
+        <p class="lead">A rétegragasztott fa nem vetemedik és nem reped meg az évek alatt, mint a hagyományos szerkezeti fa. Stabil, méretpontos és esztétikus felület — értékálló befektetés, amely évtizedekig szépen tartja magát.</p>
+        <ul class="material-points">
+          <li>Mérettartó, nem csavarodik be</li>
+          <li>Magas teherbírás, karcsúbb szerkezet</li>
+          <li>Igényes, modern megjelenés</li>
+        </ul>
+        <a href="#kapcsolat" class="text-link">Kérdezz az anyagról <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <!-- Polikarbonát szakértelem -->
+    <section class="section bg-alt">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="eyebrow">A fedés titka</span>
+          <h2>Nem mindegy, milyen polikarbonát kerül a tetődre</h2>
+          <p class="lead mx-auto mt-4">A buszmegállók olcsó, gyakran szakszerűtlenül beépített lemezei adták a polikarbonát rossz hírét. Mi a minőségi, hőtükrös anyagokkal dolgozunk — hogy nyáron se kelljen menekülni a fedés alól.</p>
+        </div>
+
+        <div class="bsh-grid poly-grid mt-12">
+          <div class="bsh-card fade-in">
+            <div class="bsh-num">01</div>
+            <h3>Hőtükrös opál</h3>
+            <p>A 16 mm-es hőtükrös opál visszaveri a napsugárzás hőjét, így a fedés alatt nem alakul ki „üvegházhatás” — érezhetően hűvösebb marad a kánikulában is.</p>
+          </div>
+          <div class="bsh-card fade-in" style="transition-delay:.1s">
+            <div class="bsh-num">02</div>
+            <h3>Exolon IQ Relax — az okos lemez</h3>
+            <p>A nap beesési szöge szerint szabályoz: nyáron, magas napállásnál visszaveri a meleget, télen, alacsony szögnél alávezeti. A polikarbonátok csúcsa.</p>
+          </div>
+          <div class="bsh-card fade-in" style="transition-delay:.2s">
+            <div class="bsh-num">03</div>
+            <h3>Törhetetlen & UV-álló</h3>
+            <p>Jégeső, hóteher, erős szél: a polikarbonát gyakorlatilag törhetetlen, miközben a káros UV-sugárzás nagy részét megszűri. Védi a bútort, a növényt és a családot.</p>
+          </div>
+          <div class="bsh-card fade-in" style="transition-delay:.3s">
+            <div class="bsh-num">04</div>
+            <h3>Csendes, precíz beépítés</h3>
+            <p>A bosszantó pattogás oka a hiányzó gumi alátét. Nálunk minden szarufára kerül — a hőtáguláskor nincs ropogás, csak nyugalom a fedés alatt.</p>
           </div>
         </div>
       </div>
@@ -306,7 +450,7 @@
             <h3>Ingyenes helyszíni felmérés</h3>
             <p>Győr és vonzáskörzetében ingyenesen kimegyünk, felmérjük a helyszínt és személyre szabott ajánlatot adunk.</p>
           </div>
-          <div class="bsh-card fade-in bsh-card--highlight" style="transition-delay:.5s">
+          <div class="bsh-card fade-in" style="transition-delay:.5s">
             <div class="bsh-num">06</div>
             <h3>Rétegragasztott faanyag (BSH)</h3>
             <p>Nem vetemedik, nem reped meg az évek alatt. Modern, esztétikus felület — értékálló befektetés generációknak.</p>
@@ -335,13 +479,47 @@
       </div>
     </section>
 
+    <!-- Előtte / Utána -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="eyebrow">Előtte / Utána</span>
+          <h2>A puszta udvartól a kész fedésig</h2>
+          <p class="lead mx-auto mt-4">Húzd el a csúszkát, és nézd meg, mekkora különbséget jelent egy jól megtervezett szerkezet.</p>
+        </div>
+
+        <!--
+          ⚠️  CSERÉLD KI VALÓDI „ELŐTTE / UTÁNA” PÁRRA!
+          A két képnek UGYANARRÓL a projektről kell lennie:
+            .ba-before img  → a felmérés előtti, üres állapot
+            .ba-after  img  → ugyanaz a helyszín a kész fedéssel
+          A jelenlegi képek csak bemutató célt szolgálnak.
+        -->
+        <div class="ba-slider fade-in mt-10" role="group" aria-label="Előtte-utána összehasonlító">
+          <div class="ba-before">
+            <img src="./721779939_1718594186527876_8847622615205134484_n.webp" alt="Helyszín a kivitelezés előtt" loading="lazy" decoding="async">
+            <span class="ba-tag ba-tag--before">Előtte</span>
+          </div>
+          <div class="ba-after">
+            <img src="./492412545_1344342180619747_7426113484604253320_n.webp" alt="Elkészült teraszfedés" loading="lazy" decoding="async">
+            <span class="ba-tag ba-tag--after">Utána</span>
+          </div>
+          <div class="ba-handle" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="#fff" stroke-width="2.4" fill="none"><path d="M9 6L3 12l6 6M15 6l6 6-6 6"/></svg>
+          </div>
+          <input type="range" class="ba-range" min="0" max="100" value="50"
+                 aria-label="Előtte-utána csúszka" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+        </div>
+      </div>
+    </section>
+
     <!-- Galéria -->
     <section id="galeria" class="section bg-alt">
       <div class="container">
         <div class="section-header text-center fade-in">
           <span class="eyebrow">Galéria</span>
-          <h2>Inspiráció korábbi munkáink hangulatával</h2>
-          <p class="lead mx-auto mt-4">Természetes tónusok, markáns faszerkezetek és letisztult kültéri megoldások. Kattints a képekre a nagyításhoz.</p>
+          <h2>Munkák, amelyek magukért beszélnek</h2>
+          <p class="lead mx-auto mt-4">Valódi otthonok, egyedi igények, gondos kivitelezés. Kattints a képekre a nagyításhoz.</p>
         </div>
         <div class="gallery-filters fade-in mt-8" role="group" aria-label="Galéria szűrők">
           <button class="filter-btn active" data-filter="all">Összes</button>
@@ -356,7 +534,7 @@
         <!-- Képek a script.js KEPEK tömbből töltődnek be -->
       </div>
 
-      <div class="text-center mt-10">
+      <div class="text-center mt-10" id="loadMoreWrap">
         <button class="btn btn-outline-primary" id="loadMoreBtn">Több kép betöltése</button>
       </div>
     </section>
@@ -431,24 +609,118 @@
             </div>
           </div>
 
+          <div class="review-card fade-in">
+            <div class="review-stars" aria-label="5 csillag">★★★★★</div>
+            <p class="review-text">„Keményen és precízen dolgoztak, nagyon jó gépjárműbeállót építettek. Munkájuk alapján ajánlani tudom azoknak, akik építtetni akarnak — bátran forduljanak feléjük megrendeléssel."</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">GN</div>
+              <div>
+                <strong>Géza N.</strong>
+                <span class="review-location">Kocsibeálló</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card fade-in" style="transition-delay:0.1s">
+            <div class="review-stars" aria-label="5 csillag">★★★★★</div>
+            <p class="review-text">„Köszönjük a profi munkátokat! 🙏🏼 Imádjuk! Csak ajánlani tudom mindenkinek!"</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">PK</div>
+              <div>
+                <strong>Perjámosi-Szabó Krisztina</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card fade-in" style="transition-delay:0.2s">
+            <div class="review-stars" aria-label="5 csillag">★★★★★</div>
+            <p class="review-text">„Csodálatos lett! Köszönjük szépen! Csak ajánlani tudom! Korrekt, gyors és szép munka!"</p>
+            <div class="review-author">
+              <div class="review-avatar" aria-hidden="true">BM</div>
+              <div>
+                <strong>Bernadett M.</strong>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div class="review-stats fade-in mt-12">
           <div class="stat-item">
-            <span class="stat-number">4.9</span>
+            <span class="stat-number" data-count="4.9">4.9</span>
             <span class="stat-label">Átlagos értékelés</span>
             <div class="stat-stars" aria-hidden="true">★★★★★</div>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-number">100+</span>
+            <span class="stat-number" data-count="100" data-suffix="+">100+</span>
             <span class="stat-label">Elégedett ügyfél</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
-            <span class="stat-number">10+</span>
+            <span class="stat-number" data-count="10" data-suffix="+">10+</span>
             <span class="stat-label">Év tapasztalat</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Szolgáltatási terület -->
+    <section class="section bg-alt" aria-label="Szolgáltatási terület">
+      <div class="container service-area">
+        <div class="service-area-copy fade-in">
+          <span class="eyebrow">Hol dolgozunk</span>
+          <h2>Győr és környéke, kb. 50 km-es körzetben</h2>
+          <p class="lead mt-4">Győrből indulunk, és a környező településekre is kijárunk a helyszíni felmérésre. Ha a listán nem szerepel a községed, akkor is keress — egyeztetünk.</p>
+          <ul class="town-list mt-8">
+            <li>Győr</li><li>Győrújbarát</li><li>Tényő</li><li>Pannonhalma</li>
+            <li>Tét</li><li>Abda</li><li>Öttevény</li><li>Kunsziget</li>
+            <li>Nyúl</li><li>Écs</li><li>Gyirmót</li><li>Ménfőcsanak</li>
+            <li>Mosonmagyaróvár</li><li>Csorna</li><li>Rábapatona</li><li>+ környező falvak</li>
+          </ul>
+        </div>
+        <div class="service-area-card fade-in">
+          <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="1.8" fill="none" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <strong>Ingyenes helyszíni felmérés</strong>
+          <p>Győr vonzáskörzetében díjmentesen kimegyünk, felmérjük a helyszínt és személyre szabott ajánlatot adunk.</p>
+          <a href="tel:06302788662" class="btn btn-primary mt-6">Időpontot kérek</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GYIK / FAQ -->
+    <section id="gyik" class="section">
+      <div class="container">
+        <div class="section-header text-center fade-in">
+          <span class="eyebrow">GYIK</span>
+          <h2>Gyakori kérdések</h2>
+          <p class="lead mx-auto mt-4">A leggyakrabban felmerülő kérdések — ha a tiéd nincs köztük, keress bizalommal.</p>
+        </div>
+        <div class="faq-list mt-10">
+          <details class="faq-item fade-in">
+            <summary>Mennyibe kerül egy teraszfedés vagy pergola?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Minden munka egyedi, ezért a pontos árat helyszíni felmérés után, személyre szabott ajánlatban adjuk meg. A felmérés Győr és vonzáskörzetében ingyenes, és nem köteleződsz el vele semmire.</p></div>
+          </details>
+          <details class="faq-item fade-in">
+            <summary>Kell előleget fizetni?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Nem. Nulla előleggel dolgozunk — a fizetés a munka elkészültével történik, az elkészült munkát fizeted ki.</p></div>
+          </details>
+          <details class="faq-item fade-in">
+            <summary>Milyen területen vállaltok munkát?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Győr és kb. 50 km-es körzetében dolgozunk, többek között Győrújbarát, Tét, Pannonhalma, Mosonmagyaróvár, Csorna és a környező falvak területén. Ha a községed nincs a listán, akkor is keress — egyeztetünk.</p></div>
+          </details>
+          <details class="faq-item fade-in">
+            <summary>Miért rétegragasztott fát (BSH) használtok?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Mert a rétegragasztott fa nem vetemedik és nem reped meg az évek alatt, mint a hagyományos szerkezeti fa. Stabil, méretpontos és esztétikus — értékálló befektetés, amely generációkon át szépen tartja magát.</p></div>
+          </details>
+          <details class="faq-item fade-in">
+            <summary>Milyen tetőfedés közül választhatok?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Több megoldás közül választhatsz: polikarbonát (akár hőtükrös opál vagy Exolon IQ Relax „okos” lemez), zsindely, cserép vagy lemezfedés. A felmérésen segítünk kiválasztani az igényeidhez illőt.</p></div>
+          </details>
+          <details class="faq-item fade-in">
+            <summary>Ingyenes a helyszíni felmérés?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Igen. Győr és vonzáskörzetében díjmentesen kimegyünk, felmérjük a helyszínt, és személyre szabott árajánlatot adunk — kötöttségek nélkül.</p></div>
+          </details>
         </div>
       </div>
     </section>
@@ -457,7 +729,7 @@
     <section id="kapcsolat" class="section contact-section dark-theme">
       <div class="container contact-centered fade-in">
         <span class="eyebrow">Kapcsolat</span>
-        <h2>Kérj időpontot ingyenes felmérésre.</h2>
+        <h2>Induljon egy jó beszélgetéssel.</h2>
         <p class="lead mt-6">Ha faszerkezetes fedést, pergolát vagy más kültéri megoldást szeretnél Győr környékén, keress bizalommal — egyeztessünk egy időpontot a helyszíni konzultációra.</p>
         <address class="contact-ctas mt-10" style="font-style:normal">
           <a href="tel:06302788662" class="btn btn-primary btn-contact">
@@ -466,12 +738,12 @@
             </svg>
             06 30 278 8662
           </a>
-          <a href="mailto:fazekasterasz@gmail.com" class="btn btn-outline-light btn-contact">
+          <a href="mailto:fazekasfaepitmenyek@gmail.com" class="btn btn-outline-light btn-contact">
             <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
-            fazekasterasz@gmail.com
+            fazekasfaepitmenyek@gmail.com
           </a>
         </address>
       </div>
@@ -481,8 +753,8 @@
   <footer class="footer dark-theme">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="./logo.jpeg" alt="Fazekas Faépítmények logó" class="footer-logo"><span class="footer-brand-name">Fazekas Faépítmények</span>
-        <p>Prémium faszerkezetes fedések Győr környékén.</p>
+        <img src="./logo.webp" alt="Fazekas Teraszfedések logó" class="footer-logo"><span class="footer-brand-name">Fazekas Teraszfedések</span>
+        <p>Egyedi teraszfedések, pergolák és kocsibeállók Győr környékén.</p>
       </div>
 
       <nav class="footer-links" aria-label="Footer navigáció">
@@ -501,12 +773,44 @@
         Kövess minket Facebookon
       </a>
 
+      <nav class="footer-legal" aria-label="Jogi oldalak">
+        <a href="adatvedelem.html">Adatvédelem</a>
+        <a href="aszf.html">ÁSZF</a>
+        <a href="impresszum.html">Impresszum</a>
+      </nav>
+
       <div class="footer-bottom">
-        <p>© 2025 Fazekas Faépítmények. Minden jog fenntartva.</p>
+        <p>© 2025 Fazekas Teraszfedések. Minden jog fenntartva.</p>
         <button class="cookie-settings-link" id="cookieSettings" type="button">Süti beállítások</button>
       </div>
+
+      <!-- Készítő stúdió kredit -->
+      <a class="footer-credit" href="https://kochdigitalstudio.hu/hu" target="_blank" rel="noopener noreferrer" aria-label="Weboldal készítője: Koch Digital Stúdió">
+        <svg class="footer-credit-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="kochMark" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#6ea0ff"/>
+              <stop offset="1" stop-color="#2456e6"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 3l11 6.35v12.7L16 28.4 5 22.05V9.35L16 3z" fill="none" stroke="url(#kochMark)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M16 15.7l11-6.35M16 15.7v12.7M16 15.7L5 9.35" fill="none" stroke="url(#kochMark)" stroke-width="1.5" stroke-linejoin="round" opacity="0.9"/>
+        </svg>
+        <span>Weboldal: <strong>Koch Digital Stúdió</strong></span>
+      </a>
     </div>
   </footer>
+
+  <!-- Mobil ragadós CTA sáv -->
+  <div class="mobile-cta" id="mobileCta">
+    <a href="tel:06302788662" class="mobile-cta-call" aria-label="Hívás: 06 30 278 8662">
+      <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+      </svg>
+      Hívás
+    </a>
+    <a href="#kapcsolat" class="mobile-cta-quote">Ingyenes felmérés</a>
+  </div>
 
   <!-- Lightbox -->
   <div id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Kép megtekintése">
@@ -524,6 +828,7 @@
       </div>
       <div class="lb-caption">
         <span id="lbTitle"></span>
+        <span id="lbCounter" class="lb-counter"></span>
       </div>
     </div>
   </div>
