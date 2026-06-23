@@ -114,3 +114,20 @@
 #szolgaltatasok .bento-card p{margin:9px 0 0;color:rgba(255,255,255,.82);font-size:.82rem;line-height:1.6;max-width:34ch;transform:translateY(8px);opacity:0;transition:.3s}
 #szolgaltatasok .bento-card:hover p{transform:none;opacity:1}
 @media(max-width:768px){#szolgaltatasok .bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px;gap:7px}#szolgaltatasok .bento-card{padding:16px}#szolgaltatasok .bento-card:nth-child(n){grid-column:span 1;grid-row:span 1}#szolgaltatasok .bento-card:nth-child(1),#szolgaltatasok .bento-card:nth-child(5){grid-column:span 2}#szolgaltatasok .bento-card h3{font-size:1.05rem}#szolgaltatasok .bento-card p{display:none}}
+
+/* Editorial project gallery */
+#galeria{overflow:hidden}
+.gallery-masonry{grid-auto-rows:240px;gap:12px}
+.gallery-item{border-radius:4px;isolation:isolate;outline:1px solid rgba(16,21,18,.08);outline-offset:-1px}
+.gallery-item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery-item:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,11,8,.03) 30%,rgba(7,11,8,.88) 100%);transition:background .42s ease}
+.gallery-item img{filter:saturate(.8) contrast(1.03);transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s ease}
+.gallery-item:hover img{transform:scale(1.075);filter:saturate(1.08) contrast(1.03)}
+.gallery-item:hover:after{background:linear-gradient(180deg,rgba(7,11,8,.08),rgba(7,11,8,.95))}
+.gallery-overlay{inset:auto 0 0;padding:22px;display:block;background:none;transform:translateY(7px);transition:transform .38s cubic-bezier(.22,1,.36,1)}
+.gallery-item:hover .gallery-overlay{transform:none}
+.gallery-item-meta{display:block;margin-bottom:7px;color:var(--lime);font:500 .62rem/1 'DM Mono',monospace;letter-spacing:.14em;text-transform:uppercase}
+.gallery-item-title{display:block;font-size:clamp(.88rem,1.25vw,1.08rem);letter-spacing:-.04em}
+.gallery-item-open{display:block;margin-top:14px;color:#fff;font-size:.68rem;font-weight:800;opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s}
+.gallery-item-open span{color:var(--lime);font-size:1rem;margin-left:3px}.gallery-item:hover .gallery-item-open{opacity:1;transform:none}
+@media(max-width:768px){.gallery-masonry{grid-auto-rows:175px;gap:8px}.gallery-item:first-child{grid-column:span 2;grid-row:span 2}.gallery-overlay{padding:15px;transform:none}.gallery-item-meta{font-size:.56rem;margin-bottom:5px}.gallery-item-title{font-size:.88rem}.gallery-item-open{display:none}}

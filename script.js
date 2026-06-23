@@ -164,6 +164,12 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.setProperty("--stagger", `${(idx % OLDAL_MERET) * 45}ms`);
       btn.setAttribute("role","listitem");
       btn.setAttribute("aria-label", kep.title);
+      const categoryLabel = {
+        pergola: "Pergola",
+        terasz: "Teraszfedés",
+        kocsibealló: "Kocsibeálló",
+        kerti: "Kerti építmény"
+      }[kep.cat] || "Referenciamunka";
       btn.innerHTML = `
         <img
           src="${kep.src}"
@@ -174,7 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
           draggable="false"
         >
         <div class="gallery-overlay">
+          <span class="gallery-item-meta">${categoryLabel}</span>
           <span class="gallery-item-title">${kep.title}</span>
+          <span class="gallery-item-open" aria-hidden="true">Megnézem <span>↗</span></span>
         </div>`;
 
       btn.addEventListener("click", () => openLightbox(idx));
