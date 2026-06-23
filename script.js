@@ -147,8 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryBrowserBackdrop = document.getElementById("galleryBrowserBackdrop");
   let browserGalleryBuilt = false;
 
-  const categoryLabels = { pergola:"Pergola", terasz:"Teraszfedés", kocsibealló:"Kocsibeálló", kerti:"Kerti építmény" };
-
   function createGalleryItem(kep, idx, className) {
       const btn = document.createElement("button");
       btn.className = className;
@@ -164,11 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
           loading="lazy"
           decoding="async"
           draggable="false"
-        >
-        <div class="gallery-overlay">
-          <span class="gallery-item-meta">${categoryLabels[kep.cat] || "Referenciamunka"}</span>
-          <span class="gallery-item-title">${kep.title}</span>
-        </div>`;
+        >`;
       btn.addEventListener("click", () => openLightbox(idx));
       return btn;
   }
@@ -229,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const kep = KEPEK[idx];
     lbImg.src = kep.src;
     lbImg.alt = kep.title;
-    lbTitle.textContent = kep.title;
+    if (lbTitle) lbTitle.textContent = "";
 
     const pos = lbVisible.indexOf(idx);
     lbPrev.disabled = pos <= 0;
