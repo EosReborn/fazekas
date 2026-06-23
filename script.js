@@ -71,8 +71,6 @@ const KEPEK = [
    INNEN NEM KELL MÓDOSÍTANI SEMMIT
    ============================================================ */
 
-const OLDAL_MERET = 6; // válogatott munkák, további képek kérésre
-
 document.addEventListener("DOMContentLoaded", () => {
 
   // ── COOKIE ──────────────────────────────────────────────────
@@ -140,36 +138,24 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fade-in").forEach(el => fadeObs.observe(el));
 
   // ── GALÉRIA ──────────────────────────────────────────────────
-  const grid       = document.getElementById("galleryGrid");
-  const loadMoreBtn= document.getElementById("loadMoreBtn");
-  const loadMoreWrap=document.getElementById("loadMoreWrap");
-  const filterBtns = document.querySelectorAll(".filter-btn");
-
   let activeFilter = "all";
-  let visibleCount = OLDAL_MERET;
-  let renderedItems = []; // DOM elemek ugyanolyan sorrendben mint KEPEK
+  const grid = document.getElementById("galleryGrid");
+  const openGalleryBtn = document.getElementById("openGalleryBtn");
+  const galleryBrowser = document.getElementById("galleryBrowser");
+  const galleryBrowserGrid = document.getElementById("galleryBrowserGrid");
+  const galleryBrowserClose = document.getElementById("galleryBrowserClose");
+  const galleryBrowserBackdrop = document.getElementById("galleryBrowserBackdrop");
+  let browserGalleryBuilt = false;
 
-  // Galéria renderelése
-  function renderGallery() {
-    grid.innerHTML = "";
-    renderedItems  = [];
+  const categoryLabels = { pergola:"Pergola", terasz:"Teraszfedés", kocsibealló:"Kocsibeálló", kerti:"Kerti építmény" };
 
-    KEPEK.forEach((kep, idx) => {
+  function createGalleryItem(kep, idx, className) {
       const btn = document.createElement("button");
-      btn.className  = "gallery-item fade-in";
-      if (kep.size === "wide") btn.classList.add("gallery-item--wide");
-      if (kep.size === "tall") btn.classList.add("gallery-item--tall");
+      btn.className = className;
       btn.dataset.cat = kep.cat;
       btn.dataset.idx = idx;
-      btn.style.setProperty("--stagger", `${(idx % OLDAL_MERET) * 45}ms`);
       btn.setAttribute("role","listitem");
       btn.setAttribute("aria-label", kep.title);
-      const categoryLabel = {
-        pergola: "Pergola",
-        terasz: "Teraszfedés",
-        kocsibealló: "Kocsibeálló",
-        kerti: "Kerti építmény"
-      }[kep.cat] || "Referenciamunka";
       btn.innerHTML = `
         <img
           src="${kep.src}"
@@ -180,60 +166,43 @@ document.addEventListener("DOMContentLoaded", () => {
           draggable="false"
         >
         <div class="gallery-overlay">
-          <span class="gallery-item-meta">${categoryLabel}</span>
+          <span class="gallery-item-meta">${categoryLabels[kep.cat] || "Referenciamunka"}</span>
           <span class="gallery-item-title">${kep.title}</span>
-          <span class="gallery-item-open" aria-hidden="true">Megnézem <span>↗</span></span>
         </div>`;
-
       btn.addEventListener("click", () => openLightbox(idx));
-      grid.appendChild(btn);
-      renderedItems.push(btn);
-
-      // Fade-in observer
-      fadeObs.observe(btn);
-    });
-
-    applyFilterAndPaging();
+      return btn;
   }
 
-  function applyFilterAndPaging() {
-    let shown = 0;
-    renderedItems.forEach((btn) => {
-      const match = activeFilter === "all" || btn.dataset.cat === activeFilter;
-      if (!match) {
-        btn.classList.add("filtered-out");
-        btn.classList.remove("hidden");
-        return;
-      }
-      btn.classList.remove("filtered-out");
-      if (shown < visibleCount) {
-        btn.classList.remove("hidden");
-        shown++;
-      } else {
-        btn.classList.add("hidden");
-      }
+  function renderGalleryPreview() {
+    if (!grid) return;
+    KEPEK.slice(0, 3).forEach((kep, idx) => {
+      const item = createGalleryItem(kep, idx, "gallery-item gallery-preview-item fade-in");
+      grid.appendChild(item);
+      fadeObs.observe(item);
     });
-
-    const total = renderedItems.filter(b => activeFilter === "all" || b.dataset.cat === activeFilter).length;
-    if (loadMoreWrap) loadMoreWrap.style.display = visibleCount >= total ? "none" : "block";
   }
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      activeFilter = btn.dataset.filter;
-      visibleCount = OLDAL_MERET;
-      applyFilterAndPaging();
-    });
-  });
+  function openGalleryBrowser() {
+    if (!galleryBrowser) return;
+    if (!browserGalleryBuilt) {
+      KEPEK.forEach((kep, idx) => galleryBrowserGrid?.appendChild(createGalleryItem(kep, idx, "gallery-browser-item")));
+      browserGalleryBuilt = true;
+    }
+    galleryBrowser.hidden = false;
+    document.body.style.overflow = "hidden";
+    galleryBrowserClose?.focus();
+  }
 
-  loadMoreBtn?.addEventListener("click", () => {
-    visibleCount += 8;
-    applyFilterAndPaging();
-  });
+  function closeGalleryBrowser() {
+    if (!galleryBrowser) return;
+    galleryBrowser.hidden = true;
+    document.body.style.overflow = "";
+  }
 
-  if (grid) renderGallery();
+  openGalleryBtn?.addEventListener("click", openGalleryBrowser);
+  galleryBrowserClose?.addEventListener("click", closeGalleryBrowser);
+  galleryBrowserBackdrop?.addEventListener("click", closeGalleryBrowser);
+  renderGalleryPreview();
 
   // ── LIGHTBOX ─────────────────────────────────────────────────
   const lightbox   = document.getElementById("lightbox");
@@ -285,7 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeLightbox() {
     lightbox.hidden = true;
-    document.body.style.overflow = "";
+    if (galleryBrowser?.hidden) document.body.style.overflow = "";
   }
 
   lbClose?.addEventListener("click",   closeLightbox);
@@ -301,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("keydown", e => {
+    if (!galleryBrowser?.hidden && e.key === "Escape") { closeGalleryBrowser(); return; }
     if (lightbox?.hidden) return;
     if (e.key === "Escape")      closeLightbox();
     if (e.key === "ArrowLeft")   lbPrev?.click();

@@ -520,21 +520,25 @@
           <h2>Válogatott munkáink</h2>
           <p class="lead mx-auto mt-4">Néhány elkészült munka a sok közül — minden szerkezet az adott otthonhoz és kerthez készül.</p>
         </div>
-        <div class="gallery-filters fade-in mt-8" role="group" aria-label="Galéria szűrők">
-          <button class="filter-btn active" data-filter="all">Összes</button>
-          <button class="filter-btn" data-filter="pergola">Pergolák</button>
-          <button class="filter-btn" data-filter="terasz">Teraszfedések</button>
-          <button class="filter-btn" data-filter="kocsibealló">Kocsibeállók</button>
-          <button class="filter-btn" data-filter="kerti">Kerti építmények</button>
-        </div>
       </div>
 
-      <div class="gallery-masonry mt-10" id="galleryGrid" role="list">
+      <div class="gallery-masonry gallery-preview mt-10" id="galleryGrid" role="list">
         <!-- Képek a script.js KEPEK tömbből töltődnek be -->
       </div>
 
-      <div class="text-center mt-10" id="loadMoreWrap">
-        <button class="btn btn-outline-primary" id="loadMoreBtn">További munkák</button>
+      <div class="text-center mt-8">
+        <button class="btn btn-outline-primary" id="openGalleryBtn">Összes munka megtekintése <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section id="galleryBrowser" class="gallery-browser" hidden aria-label="Munkáink galéria" role="dialog" aria-modal="true">
+      <div class="gallery-browser-backdrop" id="galleryBrowserBackdrop"></div>
+      <div class="gallery-browser-panel" role="document">
+        <div class="gallery-browser-head">
+          <div><span class="eyebrow">Munkáink</span><h2>Teljes képgaléria</h2></div>
+          <button class="gallery-browser-close" id="galleryBrowserClose" type="button" aria-label="Galéria bezárása">×</button>
+        </div>
+        <div class="gallery-browser-grid" id="galleryBrowserGrid" role="list"></div>
       </div>
     </section>
 
