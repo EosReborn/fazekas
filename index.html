@@ -158,7 +158,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20260624">
 </head>
 
 <body>
@@ -214,6 +214,11 @@
       <div class="hero-content">
         <h1>Teraszfedések, pergolák és kocsibeállók — egyedileg, Győr környékén.</h1>
         <p class="lead lead-light">Olyan kültéri tereket építünk, amelyekre jó ránézni és még jobb hazatérni.</p>
+        <div class="hero-trust" aria-label="Fő előnyök">
+          <span>Ingyenes felmérés</span>
+          <span>Nulla előleg</span>
+          <span>Győr + 50 km</span>
+        </div>
         <div class="hero-actions">
           <a href="#kapcsolat" class="btn btn-primary">
             Ingyenes felmérést kérek
@@ -272,6 +277,21 @@
         <div class="section-header text-center fade-in">
           <span class="eyebrow">Szolgáltatások</span>
           <h2>Faszerkezetes megoldások otthonokra és kertekbe</h2>
+          <p class="lead mx-auto mt-4">A fedés, az anyag és a részletek együtt számítanak. Ezért minden munkánál a helyszínen látott adottságokra adunk tiszta, személyre szabott megoldást.</p>
+        </div>
+        <div class="service-proof fade-in mt-8" aria-label="Szolgáltatási garanciák">
+          <div>
+            <strong>Felmérés után pontos ajánlat</strong>
+            <span>Nincs sablonár, nincs rejtett méretkompromisszum.</span>
+          </div>
+          <div>
+            <strong>Mi végezzük a kivitelezést</strong>
+            <span>Családi vállalkozásként személyes felelősséget vállalunk.</span>
+          </div>
+          <div>
+            <strong>Fizetés az elkészült munka után</strong>
+            <span>Nulla előleg, átlátható együttműködés.</span>
+          </div>
         </div>
         <div class="bento-grid mt-12">
           <div class="bento-card fade-in">
@@ -392,14 +412,17 @@
         </div>
         <div class="process-grid mt-12">
           <div class="process-step fade-in">
+            <span class="process-kicker">01</span>
             <h3>Helyszíni felmérés</h3>
             <p>Előzetes egyeztetés után személyesen felmérjük a helyszínt és átbeszéljük az egyedi igényeket és lehetőségeket.</p>
           </div>
           <div class="process-step fade-in" style="transition-delay:0.15s">
+            <span class="process-kicker">02</span>
             <h3>Tervezés</h3>
             <p>Kialakul a megfelelő szerkezeti megoldás, a tökéletes anyaghasználat és a kívánt végső megjelenés.</p>
           </div>
           <div class="process-step fade-in" style="transition-delay:0.3s">
+            <span class="process-kicker">03</span>
             <h3>Kivitelezés</h3>
             <p>Gondos kivitelezés és precíz beépítés, hogy az elkészült szerkezet hosszú távon is megbízható és gyönyörű legyen.</p>
           </div>
@@ -465,36 +488,25 @@
       </div>
     </section>
 
-    <!-- Előtte / Utána -->
+    <!-- Előtte / Utána - képek később kerülnek be -->
     <section class="section">
       <div class="container">
         <div class="section-header text-center fade-in">
           <span class="eyebrow">Előtte / Utána</span>
-          <h2>A puszta udvartól a kész fedésig</h2>
-          <p class="lead mx-auto mt-4">Húzd el a csúszkát, és nézd meg, mekkora különbséget jelent egy jól megtervezett szerkezet.</p>
+          <h2>A felméréstől a kész fedésig</h2>
+          <p class="lead mx-auto mt-4">Ide ugyanannak a helyszínnek az előtte és utána fotói kerülnek, amint a megrendelő biztosítja a végleges képpárt.</p>
         </div>
-
-        <!--
-          ⚠️  CSERÉLD KI VALÓDI „ELŐTTE / UTÁNA” PÁRRA!
-          A két képnek UGYANARRÓL a projektről kell lennie:
-            .ba-before img  → a felmérés előtti, üres állapot
-            .ba-after  img  → ugyanaz a helyszín a kész fedéssel
-          A jelenlegi képek csak bemutató célt szolgálnak.
-        -->
-        <div class="ba-slider fade-in mt-10" role="group" aria-label="Előtte-utána összehasonlító">
-          <div class="ba-before">
-            <img src="./721779939_1718594186527876_8847622615205134484_n.webp" alt="Helyszín a kivitelezés előtt" loading="lazy" decoding="async">
-            <span class="ba-tag ba-tag--before">Előtte</span>
+        <div class="before-after-placeholders fade-in mt-10" aria-label="Előtte és utána fotó helye">
+          <div class="ba-placeholder ba-placeholder-before">
+            <span class="ba-placeholder-label">Előtte</span>
+            <strong>Előtte kép helye</strong>
+            <p>A jelenlegi állapot fotója kerül ide.</p>
           </div>
-          <div class="ba-after">
-            <img src="./492412545_1344342180619747_7426113484604253320_n.webp" alt="Elkészült teraszfedés" loading="lazy" decoding="async">
-            <span class="ba-tag ba-tag--after">Utána</span>
+          <div class="ba-placeholder ba-placeholder-after">
+            <span class="ba-placeholder-label">Utána</span>
+            <strong>Utána kép helye</strong>
+            <p>Az elkészült fedés fotója kerül ide.</p>
           </div>
-          <div class="ba-handle" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="#fff" stroke-width="2.4" fill="none"><path d="M9 6L3 12l6 6M15 6l6 6-6 6"/></svg>
-          </div>
-          <input type="range" class="ba-range" min="0" max="100" value="50"
-                 aria-label="Előtte-utána csúszka" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
         </div>
       </div>
     </section>
