@@ -118,6 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createGalleryItem(kep, idx, className) {
       const btn = document.createElement("button");
+      const eager = className.includes("gallery-browser-item");
       btn.className = className;
       btn.dataset.cat = kep.cat;
       btn.dataset.idx = idx;
@@ -128,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
           src="${kep.src}"
           alt="${kep.title}"
           width="800" height="600"
-          loading="lazy"
+          loading="${eager ? "eager" : "lazy"}"
           decoding="async"
           draggable="false"
         >`;
@@ -176,9 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const lbNext     = document.getElementById("lbNext");
   const lbBackdrop = document.getElementById("lbBackdrop");
   const lbCounter  = document.getElementById("lbCounter");
+  const lbThumbs   = document.getElementById("lbThumbs");
 
   let lbIndex  = 0;
   let lbVisible = []; // csak a szűrt + látható képek indexei
+  let lbThumbsBuilt = false;
 
   function getVisibleIndices() {
     return KEPEK
@@ -192,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const kep = KEPEK[idx];
     lbImg.src = kep.src;
     lbImg.alt = kep.title;
-    if (lbTitle) lbTitle.textContent = "";
+    if (lbTitle) lbTitle.textContent = kep.title;
 
     const pos = lbVisible.indexOf(idx);
     lbPrev.disabled = pos <= 0;
@@ -200,6 +203,12 @@ document.addEventListener("DOMContentLoaded", () => {
     lbPrev.style.opacity = lbPrev.disabled ? "0.3" : "1";
     lbNext.style.opacity = lbNext.disabled ? "0.3" : "1";
     if (lbCounter) lbCounter.textContent = `${pos + 1} / ${lbVisible.length}`;
+    lbThumbs?.querySelectorAll(".lb-thumb").forEach((thumb) => {
+      const active = Number(thumb.dataset.idx) === idx;
+      thumb.classList.toggle("is-active", active);
+      thumb.setAttribute("aria-current", active ? "true" : "false");
+      if (active) thumb.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" });
+    });
 
     // Szomszédos képek előtöltése a gördülékeny lapozásért
     [pos - 1, pos + 1].forEach(p => {
@@ -209,6 +218,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLightbox(idx) {
     lbVisible = getVisibleIndices();
+    if (lbThumbs && !lbThumbsBuilt) {
+      KEPEK.forEach((kep, thumbIdx) => {
+        const thumb = document.createElement("button");
+        thumb.type = "button";
+        thumb.className = "lb-thumb";
+        thumb.dataset.idx = thumbIdx;
+        thumb.setAttribute("aria-label", `${kep.title} megnyitása`);
+        thumb.innerHTML = `<img src="${kep.src}" alt="" loading="lazy" decoding="async">`;
+        thumb.addEventListener("click", () => showLb(thumbIdx));
+        lbThumbs.appendChild(thumb);
+      });
+      lbThumbsBuilt = true;
+    }
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
     showLb(idx);
@@ -233,11 +255,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("keydown", e => {
-    if (!galleryBrowser?.hidden && e.key === "Escape") { closeGalleryBrowser(); return; }
-    if (lightbox?.hidden) return;
-    if (e.key === "Escape")      closeLightbox();
-    if (e.key === "ArrowLeft")   lbPrev?.click();
-    if (e.key === "ArrowRight")  lbNext?.click();
+    if (!lightbox?.hidden) {
+      if (e.key === "Escape")      closeLightbox();
+      if (e.key === "ArrowLeft")   lbPrev?.click();
+      if (e.key === "ArrowRight")  lbNext?.click();
+      return;
+    }
+    if (!galleryBrowser?.hidden && e.key === "Escape") closeGalleryBrowser();
   });
 
   // Touch swipe a lightboxon
