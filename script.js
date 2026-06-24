@@ -52,7 +52,6 @@ const KEPEK = [
   { src: "./503249595_1378121693908462_2538137667085507041_n.webp", cat: "terasz", title: "Fedett kültéri konyha" },
   { src: "./571148759_1511590350561595_858091350255610676_n.webp", cat: "kerti", title: "Kerti pavilon fémlemez fedéssel" },
   { src: "./491861082_1344342087286423_695031385095881709_n.webp", cat: "terasz", title: "Modern fa teraszfedés" },
-  { src: "./722705004_1718542336533061_135223322545439782_n.webp", cat: "kerti", title: "Fém előtető szerkezet építés közben" },
   { src: "./661999459_1653723433014952_2094688119804639965_n.webp", cat: "terasz", title: "Fedett terasz lépcsővel" },
   { src: "./494001794_1348043120249653_2243772096525648137_n.webp", cat: "terasz", title: "Esti hangulatú fedett terasz" },
   { src: "./544984736_1463738778680086_3633222574263243629_n.webp", cat: "terasz", title: "Fa teraszfedés polikarbonáttal" },
