@@ -109,7 +109,7 @@ main{display:flex;flex-direction:column}#velemenyek{order:20}
 #szolgaltatasok .bento-card:nth-child(1){grid-column:span 2;grid-row:span 2;background-image:url('./assets/services/pergolak-arnyekolok.webp');background-position:center}
 #szolgaltatasok .bento-card:nth-child(2){grid-column:span 2;background-image:url('./assets/services/fedett-terasz.webp');background-position:center 44%}
 #szolgaltatasok .bento-card:nth-child(3){background-image:url('./assets/services/eloteto.webp');background-position:center 42%}
-#szolgaltatasok .bento-card:nth-child(4){background-image:url('./assets/services/kocsibeallo-garazs.webp?v=20260625a');background-position:center}
+#szolgaltatasok .bento-card:nth-child(4){background-image:url('./assets/services/kocsibeallo-garazs.webp?v=20260625b');background-position:center}
 #szolgaltatasok .bento-card:nth-child(5){background-image:url('./assets/services/kerti-kiulo-pavilon.webp');background-position:center 48%}
 #szolgaltatasok .bento-card:nth-child(6){background-image:url('./assets/services/kerti-szerszamtarolo.webp');background-position:center}
 #szolgaltatasok .bento-card:nth-child(7){background-image:url('./assets/services/fahaz-mobilhaz.webp');background-position:center}
