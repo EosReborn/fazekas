@@ -329,6 +329,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const set = v => {
       const value = Math.max(0, Math.min(100, Number(v)));
       slider.style.setProperty("--pos", value + "%");
+      slider.classList.toggle("is-after-only", value <= 7);
+      slider.classList.toggle("is-before-only", value >= 93);
       range?.setAttribute("aria-valuenow", Math.round(value));
       if (range) range.value = value;
     };
