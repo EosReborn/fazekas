@@ -327,22 +327,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const after = slider.querySelector(".ba-after");
     const handle = slider.querySelector(".ba-handle");
     const set = v => {
-      slider.style.setProperty("--pos", v + "%");
-      range?.setAttribute("aria-valuenow", Math.round(v));
+      const value = Math.max(0, Math.min(100, Number(v)));
+      slider.style.setProperty("--pos", value + "%");
+      range?.setAttribute("aria-valuenow", Math.round(value));
+      if (range) range.value = value;
     };
     range?.addEventListener("input", () => set(range.value));
 
-    // Húzás közvetlenül a fogantyúval (egér + érintés)
+    // Húzás vagy koppintás bárhol a képen (egér + érintés).
     let dragging = false;
     const moveTo = clientX => {
       const r = slider.getBoundingClientRect();
       const v = Math.max(0, Math.min(100, ((clientX - r.left) / r.width) * 100));
       set(v);
-      if (range) range.value = v;
     };
-    const start = () => { dragging = true; slider.classList.add("is-dragging"); };
+    const start = e => {
+      dragging = true;
+      slider.classList.add("is-dragging");
+      if (e?.clientX != null) moveTo(e.clientX);
+    };
     const end   = () => { dragging = false; slider.classList.remove("is-dragging"); };
-    handle?.addEventListener("pointerdown", start);
+    slider.addEventListener("pointerdown", start);
     window.addEventListener("pointerup", end);
     window.addEventListener("pointermove", e => { if (dragging) moveTo(e.clientX); });
     set(50);
