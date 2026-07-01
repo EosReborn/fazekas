@@ -225,7 +225,9 @@ document.addEventListener("DOMContentLoaded", () => {
         thumb.className = "lb-thumb";
         thumb.dataset.idx = thumbIdx;
         thumb.setAttribute("aria-label", `${kep.title} megnyitása`);
-        thumb.innerHTML = `<img src="${kep.src}" alt="" loading="lazy" decoding="async">`;
+        // Kis bélyegkép a nagy kép helyett (assets/gallery/thumbs/ alatt)
+        const thumbSrc = kep.src.replace("/gallery/", "/gallery/thumbs/");
+        thumb.innerHTML = `<img src="${thumbSrc}" alt="" loading="lazy" decoding="async">`;
         thumb.addEventListener("click", () => showLb(thumbIdx));
         lbThumbs.appendChild(thumb);
       });
