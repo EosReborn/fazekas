@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://fazekasterasz.hu/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fazekasterasz.hu/adatvedelem.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://fazekasterasz.hu/adatvedelem</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://fazekasterasz.hu/aszf.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://fazekasterasz.hu/aszf</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://fazekasterasz.hu/impresszum.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://fazekasterasz.hu/impresszum</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
