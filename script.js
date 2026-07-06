@@ -97,14 +97,68 @@ document.addEventListener("DOMContentLoaded", () => {
   navOverlay?.addEventListener("click", closeMenu);
   navLinks?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
   document.addEventListener("keydown", e => { if (e.key==="Escape") closeMenu(); });
-  window.addEventListener("scroll", () => navbar?.classList.toggle("is-scrolled", window.scrollY > 40), { passive:true });
+
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ── FADE-IN ──────────────────────────────────────────────────
   const fadeObs = new IntersectionObserver(
-    (entries, obs) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("is-visible"); obs.unobserve(e.target); } }),
-    { rootMargin:"0px 0px -8% 0px", threshold:0.08 }
+    (entries, obs) => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-visible");
+      obs.unobserve(e.target);
+    }),
+    { rootMargin: "0px 0px -5% 0px", threshold: 0.12 }
   );
   document.querySelectorAll(".fade-in").forEach(el => fadeObs.observe(el));
+
+  const staggerObs = new IntersectionObserver(
+    (entries, obs) => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("is-visible");
+      obs.unobserve(e.target);
+    }),
+    { rootMargin: "0px 0px -5% 0px", threshold: 0.08 }
+  );
+  document.querySelectorAll(".reveal-stagger").forEach(el => staggerObs.observe(el));
+
+  // ── SCROLL (single rAF pipeline) ─────────────────────────────
+  const heroBg = document.querySelector(".hero-bg");
+  const mobileCta = document.getElementById("mobileCta");
+  const contactSec = document.getElementById("kapcsolat");
+  const heroParallaxEnabled = heroBg && !prefersReduced
+    && window.matchMedia("(pointer: fine)").matches
+    && window.innerWidth > 768;
+
+  let scrollTicking = false;
+  const updateOnScroll = () => {
+    const y = window.scrollY;
+
+    navbar?.classList.toggle("is-scrolled", y > 40);
+
+    if (heroParallaxEnabled && y < window.innerHeight) {
+      heroBg.style.transform = `translate3d(0, ${y * 0.12}px, 0) scale(1.04)`;
+    }
+
+    if (mobileCta) {
+      const pastHero = y > window.innerHeight * 0.6;
+      let overContact = false;
+      if (contactSec) {
+        const r = contactSec.getBoundingClientRect();
+        overContact = r.top < window.innerHeight * 0.85 && r.bottom > 0;
+      }
+      mobileCta.classList.toggle("is-visible", pastHero && !overContact);
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      updateOnScroll();
+      scrollTicking = false;
+    });
+  }, { passive: true });
+  updateOnScroll();
 
   // ── GALÉRIA ──────────────────────────────────────────────────
   let activeFilter = "all";
@@ -277,8 +331,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { passive:true });
 
   // ── STAT COUNT-UP ────────────────────────────────────────────
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   function animateCount(el) {
     const raw    = el.dataset.count || el.textContent;
     const num    = parseFloat(raw.replace(",", "."));
@@ -307,21 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }, { threshold: 0.4 });
   document.querySelectorAll(".review-stats").forEach(el => statObs.observe(el));
-
-  // ── HERO PARALLAX ────────────────────────────────────────────
-  const heroBg = document.querySelector(".hero-bg");
-  if (heroBg && !prefersReduced) {
-    let ticking = false;
-    window.addEventListener("scroll", () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (y < window.innerHeight) heroBg.style.transform = `scale(1.06) translateY(${y * 0.18}px)`;
-        ticking = false;
-      });
-    }, { passive: true });
-  }
 
   // ── BEFORE / AFTER SLIDER ────────────────────────────────────
   document.querySelectorAll(".ba-slider").forEach(slider => {
@@ -357,27 +394,5 @@ document.addEventListener("DOMContentLoaded", () => {
     set(50);
     if (after) after.setAttribute("aria-hidden", "true");
   });
-
-  // ── MOBIL RAGADÓS CTA ────────────────────────────────────────
-  const mobileCta  = document.getElementById("mobileCta");
-  const contactSec = document.getElementById("kapcsolat");
-  if (mobileCta) {
-    let ctaTicking = false;
-    const updateCta = () => {
-      const pastHero = window.scrollY > window.innerHeight * 0.6;
-      let overContact = false;
-      if (contactSec) {
-        const r = contactSec.getBoundingClientRect();
-        overContact = r.top < window.innerHeight * 0.85 && r.bottom > 0;
-      }
-      mobileCta.classList.toggle("is-visible", pastHero && !overContact);
-    };
-    window.addEventListener("scroll", () => {
-      if (ctaTicking) return;
-      ctaTicking = true;
-      requestAnimationFrame(() => { updateCta(); ctaTicking = false; });
-    }, { passive: true });
-    updateCta();
-  }
 
 });
