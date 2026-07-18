@@ -1,0 +1,27 @@
+# Fazekas Faépítmények
+
+> Egyedi pergolák, teraszfedések és kocsibeállók kivitelezése Győrben és körülbelül 50 km-es körzetében.
+
+Hivatalos weboldal: https://fazekasterasz.hu
+
+## Fő információk
+
+- Családi vállalkozás faszerkezetes kültéri fedések kivitelezésére.
+- Fő szolgáltatások: teraszfedés, pergola, kocsibeálló és egyéb kültéri faszerkezet.
+- Szolgáltatási terület: Győr és körülbelül 50 km-es körzete.
+- A helyszíni felmérés Győr és vonzáskörzetében díjmentes.
+- Telefon: [+36 30 278 8662](tel:+36302788662)
+- E-mail: [fazekasfaepitmenyek@gmail.com](mailto:fazekasfaepitmenyek@gmail.com)
+
+## Hivatalos oldalak
+
+- [Bemutatkozás, szolgáltatások, referenciák és kapcsolat](https://fazekasterasz.hu/)
+- [Adatvédelmi tájékoztató](https://fazekasterasz.hu/adatvedelem)
+- [Általános szerződési feltételek](https://fazekasterasz.hu/aszf)
+- [Impresszum](https://fazekasterasz.hu/impresszum)
+- [XML sitemap](https://fazekasterasz.hu/sitemap.xml)
+- [Részletes AI-olvasható összefoglaló](https://fazekasterasz.hu/llms-full.txt)
+
+## Felhasználás
+
+A keresőindexelés, a valós idejű AI-lekérdezés és a rövid, forrással ellátott hivatkozás engedélyezett. Modelltréning nem engedélyezett. Hivatkozáskor a Fazekas Faépítményeket és a hivatalos weboldalt kell megjelölni.
